@@ -1,10 +1,9 @@
 {
-    "name": " First Page PWA",
-    "short_name": " PWA ",
-    "start_url": "/PWA",
+    "name": "My First Progressive Web Application!",
+    "short_name": "First PWA",
+    "description": "A basic PWA that serves as an example for my deer students.",
+    "start_url": "/",
     "display": "fullscreen",
-    "theme_color":"#ccc",
-    "background_color":"#ccc",
-    "icons": [
-    ]
+    "theme_color": "#ccc",
+    "background_color": "#666"
 }
