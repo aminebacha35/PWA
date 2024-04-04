@@ -1,0 +1,10 @@
+{
+    "name": " First Page PWA",
+    "short_name": " PWA ",
+    "start_url": "/PWA",
+    "display": "fullscreen",
+    "theme_color":"#ccc",
+    "background_color":"#ccc",
+    "icons": [
+    ]
+}
