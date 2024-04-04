@@ -1,7 +1,6 @@
 "use strict";
 
-// Set files to cache
-const version = "v3";
+const version = "v1";
 const cacheName = `myapp-${version}`;
 const filesToCache = [
     "/index.html",
@@ -9,8 +8,6 @@ const filesToCache = [
 
 ];
 
-// When installing the service worker,
-// Cache assets.
 self.addEventListener("insall", (e) => {
     console.log("[SW] install");
     e.waitUntil((async () => {
@@ -20,15 +17,10 @@ self.addEventListener("insall", (e) => {
     })());
 });
 
-// Add a middleware to fetch,
-// Use cache to avoid network usage.
-// And cache cacheable requests.
+
 self.addEventListener("fetch", (e) => {
     console.log("[SW] Fetching url: ", e.request.url);
     e.respondWith((async () => {
-        // If the request has already been cached,
-        // return the cached value to avoid unnecessary
-        // network usage.
         const match = await caches.match(e.request);
         if (match) return match;
 
@@ -44,7 +36,6 @@ self.addEventListener("fetch", (e) => {
     })())
 });
 
-// Remove old content from cache to free disk space
 self.addEventListener("activate", (e) => {
     e.waitUntil((async () => {
         const keys = await caches.keys();
