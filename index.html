@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWA</title>
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("sw.js");
-        }
-    </script>
-    <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.webmanifest"> 
+    <title>Création de listes de courses</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h1>Listes de courses</h1>
+    <div id="list-container"></div>
+
+    <form id="new-list-form">
+        <input type="text" id="item-name" placeholder="Nom de l'article">
+        <input type="number" id="item-quantity" placeholder="Quantité">
+        <input type="number" id="item-price" placeholder="Prix">
+        <button type="submit">Ajouter à la liste</button>
+    </form>
+
+    <script src="main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js') 
+                    .then(registration => {
+                        console.log('Service Worker enregistré avec succès :', registration);
+                    })
+                    .catch(error => {
+                        console.error('Erreur lors de l\'enregistrement du Service Worker :', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

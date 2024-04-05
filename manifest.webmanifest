@@ -1,9 +1,10 @@
 {
-    "name": "My First PWA!",
-    "short_name": "First PWA",
-    "description": "PWA TEST",
-    "start_url": "/",
-    "display": "fullscreen",
-    "theme_color": "#fff",
-    "background_color": "#fff"
-}
+    "name": "Listes de courses",
+    "short_name": "Courses",
+    "description": "Une application pour créer et gérer des listes de courses",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff"
+  }
+  
