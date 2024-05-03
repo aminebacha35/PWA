@@ -10,7 +10,7 @@ class Film {
 
 // Fonction pour ajouter un film
 function addMovie(event) {
-    event.preventDefault(); // Empêcher le rechargement de la page
+    event.preventDefault(); 
 
     // Récupérer les valeurs du formulaire
     const title = document.getElementById('title').value;
@@ -62,7 +62,6 @@ function addMovie(event) {
 function shareMovie(movie) {
     // Construction de l'URL du partage sur Twitter avec le titre du film
     const shareUrl = `https://twitter.com/intent/tweet?text=Regardez ${movie.title}!`;
-    // Ouvrir une nouvelle fenêtre de navigateur pour partager sur Twitter
     window.open(shareUrl, '_blank');
 }
 
