@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.webmanifest"> 
-    <title>Création de listes de courses</title>
+    <title>Ma PWA Films</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-    <h1>Listes de courses</h1>
-    <div id="list-container"></div>
-
-    <form id="new-list-form">
-        <input type="text" id="item-name" placeholder="Nom de l'article">
-        <input type="number" id="item-quantity" placeholder="Quantité">
-        <input type="number" id="item-price" placeholder="Prix">
-        <button type="submit">Ajouter à la liste</button>
+    <h1>Ajouter un film</h1>
+    <form id="movieForm">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" required><br>
+        <label for="releaseDate">Date de sortie:</label>
+        <input type="date" id="releaseDate" required><br>
+        <label for="authors">Auteurs:</label>
+        <input type="text" id="authors" required><br>
+        <label for="upload">Trailer (Upload video):</label>
+        <input type="file" id="upload" accept="video/*" required><br>
+        
+        <button type="submit">Ajouter</button>
     </form>
-
+    <div id="moviesList">
+        <!-- Liste des films ajoutés -->
+    </div>
     <script src="main.js"></script>
+
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js') 
-                    .then(registration => {
-                        console.log('Service Worker enregistré avec succès :', registration);
-                    })
-                    .catch(error => {
-                        console.error('Erreur lors de l\'enregistrement du Service Worker :', error);
-                    });
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('Service Worker registered'))
+                    .catch(error => console.error('Service Worker registration failed:', error));
             });
         }
     </script>
