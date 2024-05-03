@@ -45,12 +45,6 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
@@ -58,18 +52,24 @@
     }
   ],
   "splash_pages": null,
-  "screenshots": [
-    {
-      "src": "/screenshots/screenshot1.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg"
-    },
-    {
-      "src": "/screenshots/screenshot2.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg"
-    }
+
+  "display_override": [
+    "browser",
+    "window-controls-overlay",
+    "standalone"
   ],
+  "categories": [
+    "entertainment"
+  ],
+  "share_target": {
+    "method": "GET",
+    "action": "/",
+    "params": {
+      "title": "Regarder vos films ",
+      "url": "/",
+      "text": "Ajouter ce film à la liste de vos favoris"
+    }
+  },
   "orientation": "any",
   "prefer_related_applications": false,
   "related_applications": [
